@@ -76,7 +76,7 @@ function showTask(obj): void {
     containerEl.innerHTML += `
         <div id="${obj.id}" class="todo-row">
             <div class="todo-item ${obj.done ? "done" : ""}">${obj.body}</div>
-            <input type="button" onclick="addListenerButton(${obj.id})" class="todo-ok" value="✓"/>
+            <input type="button" onclick="addListenerButton(${obj.id})" class="todo-ok" value="&#10004;"/>
         </div>
     `;
 }
