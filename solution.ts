@@ -32,8 +32,8 @@ window.onload = (): void => {
         });
   
         document.querySelector("#todo-delcom").addEventListener("click", function () {
-            let allCompleted = document.querySelectorAll(".done");
-            let newArr = [];
+            let allCompleted:any = document.querySelectorAll(".done");
+            let newArr:Array<Task> = [];
   
             for (var i = allCompleted.length - 1; i >= 0; i--) {
             (<HTMLInputElement>allCompleted[i].parentNode).remove();
@@ -55,8 +55,7 @@ function addListenerButton(id:number): void {
 }
 
 function createTask(): void {
-    let textArea: any = (<HTMLInputElement>document.querySelector("#todo-item"))
-      .value;
+    let textArea: string = (<HTMLInputElement>document.querySelector("#todo-item")).value;
     let obj: Task = new Task(getIDandIncrease(), textArea);
     arr.push(obj);
     localStorage.setItem("tasks", JSON.stringify(arr));
